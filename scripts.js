@@ -1,3 +1,6 @@
+//making a game state so when the game is one no more buttons can be pushed
+//figuring out a clean way to make the wincheck, I COULD manually plug it in, but simpler solutions needed.
+
 let turnCounter = 0;
 
 let playerXWins= 0;
@@ -16,7 +19,7 @@ function playerTurn() {
 
 function checkWin() {
     let cellArray = document.getElementsByClassName("cell");
-
+ 
     if (cellArray[0,1,2].innerHTML=="X" || cellArray [0,1,2].innerHTML =="O"){
         console.log("winner!")
     }
