@@ -1,4 +1,4 @@
-//making a game state so when the game is one no more buttons can be pushed
+//making a game state so when the game is won no more buttons can be pushed
 //figuring out a clean way to make the wincheck, I COULD manually plug it in, but simpler solutions needed.
 
 let turnCounter = 0;
