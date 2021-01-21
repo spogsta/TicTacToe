@@ -20,7 +20,7 @@ function playerTurn() {
 function checkWin() {
     let cellArray = document.getElementsByClassName("cell");
  
-    if (cellArray[0,1,2].innerHTML=="X" || cellArray [0,1,2].innerHTML =="O"){
+    if (cellArray[0].innerHTML=="X" && cellArray[1].innerHTML =="X" && cellArray[2].innerHTML =="X"){
         console.log("winner!")
     }
     else {};
