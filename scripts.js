@@ -7,7 +7,7 @@ let playerXWins= 0;
 let playerOWins= 0;
 let currentWin =0;
 
-function playerTurn() {
+function playerTurn() { //even returns O odds returns x, O always starts first (that's how i played it)
     if (turnCounter % 2 ==0) {
         return "O";
     }
@@ -18,7 +18,7 @@ function playerTurn() {
     
 }
 
-let winCon = 
+let winCon = //possible win conditions rox, colums and diagnol
 [[0,1,2],
  [3,4,5],
  [6,7,8],
@@ -29,15 +29,14 @@ let winCon =
  [2,4,6]
 ]
 
-let cellArray = document.getElementsByClassName("cell");
-let playerX = document.getElementsByClassName("playerX").innerHTML;
-let playerO = document.getElementsByClassName("playerY").innerHTML;
+let cellArray = document.getElementsByClassName("cell"); //this makes an array of all cells
+
 
 
 
 function checkWin() {
-    let cellArray = document.getElementsByClassName("cell");
-    for (i=0; i< 8; i++){
+    let cellArray = document.getElementsByClassName("cell");//updates current cells everytime checkwin is called.
+    for (i=0; i< 8; i++){// checks through all win conditions
         
         if (cellArray[winCon[i][0]].innerHTML=="X" && cellArray[winCon[i][1]].innerHTML =="X" && cellArray[winCon[i][2]].innerHTML =="X" ){
             console.log("winner!");
