@@ -30,6 +30,11 @@ let winCon =
 ]
 
 let cellArray = document.getElementsByClassName("cell");
+let playerX = document.getElementsByClassName("playerX").innerHTML;
+let playerO = document.getElementsByClassName("playerY").innerHTML;
+
+
+
 function checkWin() {
     let cellArray = document.getElementsByClassName("cell");
     for (i=0; i< 8; i++){
@@ -38,12 +43,16 @@ function checkWin() {
             console.log("winner!");
             playerXWins ++;
             currentWin = 1;
+            return document.getElementById("playerX").innerHTML = playerXWins
+            
             
         }
         else if(cellArray[winCon[i][0]].innerHTML =="O" && cellArray[winCon[i][1]].innerHTML =="O" && cellArray[winCon[i][2]].innerHTML =="O"){
             console.log("O WINNER");
             playerOWins ++;
             currentWin = 1;
+            return document.getElementById("playerO").innerHTML = playerOWins;
+
         }
     }
         
@@ -55,16 +64,16 @@ function checkGameState(){};//some sort of check if the max turns for draw, + ch
 
 function pushBtn(btn){
     if (currentWin == 0) { //stops from pushing more buttons after a win
-    if (btn.innerHTML == "test "){
-        btn.innerHTML = playerTurn();//placeholder for X'S and O'S
-        turnCounter+=1;
-        checkWin();
+        if (btn.innerHTML == "test "){
+            btn.innerHTML = playerTurn();//placeholder for X'S and O'S
+            turnCounter+=1;
+            checkWin();
 
-    }
-    else {
-        alert("no cheating!");
-    }
-    }
+        }
+        else {
+            alert("no cheating!");
+        }
+        }
 
 };
 
@@ -72,6 +81,8 @@ function btnReset() {
     currentWin=0;
     turnCounter=0;
     for (i=0; i<9; i++){
-        cellArray[i].innerHTML = "test";
+        cellArray[i].innerHTML = "test ";
     }
+    
+    
 }
