@@ -17,28 +17,49 @@ function playerTurn() {
     
 }
 
-const winCon = [
-    [0,1,2],
+let winCon = 
+[[0,1,2],
     [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-
+ [6,7,8],
+ [0,3,6],
+ [1,4,7],
+ [2,5,8],
+ [0,4,8],
+ [2,4,6]
 ]
 
-
+let cellArray = document.getElementsByClassName("cell");
 function checkWin() {
     let cellArray = document.getElementsByClassName("cell");
- 
-    if (cellArray[0].innerHTML=="X" && cellArray[1].innerHTML =="X" && cellArray[2].innerHTML =="X"){
-        console.log("winner!")
+    for (i=0; i< 8; i++){
+        
+        if (cellArray[winCon[i][0]].innerHTML=="X" && cellArray[winCon[i][1]].innerHTML =="X" && cellArray[winCon[i][2]].innerHTML =="X" ){
+            console.log("winner!");
+            playerXWins ++;
+        }
+        else if(cellArray[winCon[i][0]].innerHTML =="O" && cellArray[winCon[i][1]].innerHTML =="O" && cellArray[winCon[i][2]].innerHTML =="O"){
+            console.log("O WINNER");
+        }
     }
-    else {};
+        
     return console.log(cellArray);
-}
+    }
+
+
+
+//*let winFilter = (par, test) => {
+   // evaldArray = par.filter(num => test.includes(num) === true)
+   // if (evaldArray.length ===3) {
+  //      console.log("you win DOOOOD");
+//    }
+//}
+
+//let findWin = () => {
+  //  for (i = 0; i < 8; i++) {
+    //    winFilter(cellArray, winCon[i])
+   // }
+//}
+
 
 function checkGameState(){};//some sort of check if the max turns for draw, + checking if either player won
 
@@ -48,6 +69,7 @@ function pushBtn(btn){
         btn.innerHTML = playerTurn();//placeholder for X'S and O'S
         turnCounter+=1;
         checkWin();
+       // findWin();
     }
     else {
         alert("no cheating!");
