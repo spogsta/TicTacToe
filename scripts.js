@@ -1,10 +1,11 @@
 //making a game state so when the game is won no more buttons can be pushed
 //figuring out a clean way to make the wincheck, I COULD manually plug it in, but simpler solutions needed.
 
-let turnCounter = 0;
+let turnCounter = 0; //this is to dictate a draw if there is no wincon on buttonpush
 
 let playerXWins= 0;
 let playerOWins= 0;
+let currentWin =0;
 
 function playerTurn() {
     if (turnCounter % 2 ==0) {
@@ -19,7 +20,7 @@ function playerTurn() {
 
 let winCon = 
 [[0,1,2],
-    [3,4,5],
+ [3,4,5],
  [6,7,8],
  [0,3,6],
  [1,4,7],
@@ -36,9 +37,13 @@ function checkWin() {
         if (cellArray[winCon[i][0]].innerHTML=="X" && cellArray[winCon[i][1]].innerHTML =="X" && cellArray[winCon[i][2]].innerHTML =="X" ){
             console.log("winner!");
             playerXWins ++;
+            currentWin = 1;
+            
         }
         else if(cellArray[winCon[i][0]].innerHTML =="O" && cellArray[winCon[i][1]].innerHTML =="O" && cellArray[winCon[i][2]].innerHTML =="O"){
             console.log("O WINNER");
+            playerOWins ++;
+            currentWin = 1;
         }
     }
         
@@ -46,33 +51,27 @@ function checkWin() {
     }
 
 
-
-//*let winFilter = (par, test) => {
-   // evaldArray = par.filter(num => test.includes(num) === true)
-   // if (evaldArray.length ===3) {
-  //      console.log("you win DOOOOD");
-//    }
-//}
-
-//let findWin = () => {
-  //  for (i = 0; i < 8; i++) {
-    //    winFilter(cellArray, winCon[i])
-   // }
-//}
-
-
 function checkGameState(){};//some sort of check if the max turns for draw, + checking if either player won
 
 function pushBtn(btn){
-    
+    if (currentWin == 0) { //stops from pushing more buttons after a win
     if (btn.innerHTML == "test "){
         btn.innerHTML = playerTurn();//placeholder for X'S and O'S
         turnCounter+=1;
         checkWin();
-       // findWin();
+
     }
     else {
         alert("no cheating!");
     }
+    }
 
 };
+
+function btnReset() {
+    currentWin=0;
+    turnCounter=0;
+    for (i=0; i<9; i++){
+        cellArray[i].innerHTML = "test";
+    }
+}
