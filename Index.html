@@ -13,8 +13,27 @@
 
 
 <div>
-    <p>playerOwins:<div id="playerO">0</div></p>
-    <p>playerXwins:<p id="playerX">0</p></p>
+<p class="announcementZone">Enter player name.</p>
+
+
+<p id="playerONameZone">player O:</p>
+
+<div>Wins: <div id="playerO">0</div></div>
+<p id="playerXNameZone">player X:</p>
+<div>Wins: <p id="playerX">0</p></div>
+
+<form onsubmit="return false">
+    <label for="playerOName">Player O name:</label>
+    <input type="text" id="playerOName" name="playerOName">
+    <input type="submit" value="submit" onclick="onClickO()" ></form>
+
+<form onsubmit="return false">
+    <label for="playerXName">Player X name:</label>
+    <input type="text" id="playerXName" name="playerXName">
+    <input type="submit" value="submit" onclick="onClickX()">
+</form>
+
+
 </div>
 
 
@@ -37,6 +56,7 @@
             <th><button id ="9" class="cell" onclick="pushBtn(this)">test </button></th>
         </tr>
         ></table>
+        <p id="playerTurnDisplay">Player O's Turn!</p>
         <button onclick="btnReset()">RESET</button>
         <script src="scripts.js"></script>
     </body>

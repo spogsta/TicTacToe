@@ -7,6 +7,7 @@ let playerXWins= 0;
 let playerOWins= 0;
 let currentWin =0;
 
+
 function playerTurn() { //even returns O odds returns x, O always starts first (that's how i played it)
     if (turnCounter % 2 ==0) {
         return "O";
@@ -45,12 +46,15 @@ function checkWin() {
             return document.getElementById("playerX").innerHTML = playerXWins
             
             
+            
         }
         else if(cellArray[winCon[i][0]].innerHTML =="O" && cellArray[winCon[i][1]].innerHTML =="O" && cellArray[winCon[i][2]].innerHTML =="O"){
             console.log("O WINNER");
             playerOWins ++;
             currentWin = 1;
-            return document.getElementById("playerO").innerHTML = playerOWins;
+            document.getElementById("playerO").innerHTML = playerOWins;
+            document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s WON!"// THIS DOESNT WORK?
+            
 
         }
     }
@@ -67,6 +71,13 @@ function pushBtn(btn){
             btn.innerHTML = playerTurn();//placeholder for X'S and O'S
             turnCounter+=1;
             checkWin();
+            if (playerTurn() == "X"){ //player turndisplay update
+                document.getElementById("playerTurnDisplay").innerHTML= document.getElementById("playerXNameZone").innerHTML + "'s Turn!"
+
+            }
+            else {
+                document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
+            }
 
         }
         else {
@@ -84,4 +95,18 @@ function btnReset() {
     }
     
     
+}
+
+document.getElementById("playerOName")
+document.getElementById("playerXName")
+
+function onClickO() {
+    var message = document.getElementById("playerOName").value;
+    document.getElementById('playerONameZone').innerHTML ="Player " + message;
+    document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
+};
+
+function onClickX() {
+    var message = document.getElementById("playerXName").value;
+    document.getElementById("playerXNameZone").innerHTML= "Player " + message;
 }
