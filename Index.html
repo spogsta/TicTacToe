@@ -29,14 +29,14 @@
 
 </div>
 
-<div>Draws:</div>
-<div id="draw">0</div>
+<!--<div>Draws:</div>
+<div id="draw">0</div> in case i want a draw tracker, havent decided-->
 
 <p class="announcementZone">Enter player name.</p>
 <form onsubmit="return false">
     <label for="playerOName">Player O name:</label>
     <input type="text" id="playerOName" name="playerOName">
-    <input type="submit" value="submit" onclick="onClickO()" ></form>
+    <input type="submit" value="submit" onclick="onClickO()"></form>
 
 <form onsubmit="return false">
     <label for="playerXName">Player X name:</label>
@@ -50,7 +50,7 @@
 
         <table style="width:100%">
         <tr id="row1">
-            <th> <button id ="1" class="cell" onclick="pushBtn(this)">test </button></th>
+            <th><button id ="1" class="cell" onclick="pushBtn(this)">test </button></th>
             <th><button id ="2" class="cell" onclick="pushBtn(this)">test </button></th>
             <th><button id ="3" class="cell" onclick="pushBtn(this)">test </button></th>
         </tr>
@@ -66,7 +66,7 @@
             <th><button id ="8" class="cell" onclick="pushBtn(this)">test </button></th>
             <th><button id ="9" class="cell" onclick="pushBtn(this)">test </button></th>
         </tr>
-        ></table>
+        </table>
         <p id="playerTurnDisplay">Player O's Turn!</p>
         <button onclick="btnReset()">RESET</button>
         <script src="scripts.js"></script>
