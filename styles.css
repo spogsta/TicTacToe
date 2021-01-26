@@ -4,3 +4,56 @@ table{border: solid 1px black;
 tr {border: black solid 1px;}
 
 th {border: black solid 1px;}
+
+h1{
+text-align: center;
+}
+
+#playerContainer {
+    box-sizing:border-box;
+    margin-right:4%;
+    float:center;
+    width:100%;
+    background-color: white;
+    border: 1px solid red;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px #bdbdbd;
+    -webkit-box-shadow: 0 0 10px #bdbdbd;
+    box-shadow: 0 0 10px #bdbdbd;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#playerOContainer{
+    width: 19%;
+    border: 1px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    align-content: right;
+}
+.playerOClass {
+    
+    border: 1px solid black;
+    display: inline-block; 
+}
+
+#playerXContainer{
+    width: 80%;
+    border: 1px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: left;
+}
+
+.playerXClass{
+    width: 100px;
+    border: 1px solid black;
+    display: inline-block; 
+}
+
+#playerXContainer{
+    float: left;
+}

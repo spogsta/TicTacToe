@@ -6,6 +6,7 @@ let turnCounter = 0; //this is to dictate a draw if there is no wincon on button
 let playerXWins= 0;
 let playerOWins= 0;
 let currentWin =0;
+let draw = 0;
 
 
 function playerTurn() { //even returns O odds returns x, O always starts first (that's how i played it)
@@ -61,34 +62,39 @@ function checkWin() {
 
         }
     }
-        
-    return console.log(cellArray);
-    }
+    
+ }
 
-
-function checkGameState(){};//some sort of check if the max turns for draw, + checking if either player won
 
 function pushBtn(btn){
-    if (currentWin == 0) { //stops from pushing more buttons after a win
-        if (btn.innerHTML == "test "){
-            btn.innerHTML = playerTurn();//placeholder for X'S and O'S
-            turnCounter+=1;
-            if (playerTurn() == "X"){ //player turndisplay update
-                document.getElementById("playerTurnDisplay").innerHTML= document.getElementById("playerXNameZone").innerHTML + "'s Turn!"
+    if (currentWin == 0 ) { //stops from pushing more buttons after a win
+        if(turnCounter<8){
+            if (btn.innerHTML == "test "){
+                btn.innerHTML = playerTurn();//placeholder for X'S and O'S
+                turnCounter+=1;
+                if (playerTurn() == "X"){ //player turndisplay update
+                    document.getElementById("playerTurnDisplay").innerHTML= document.getElementById("playerXNameZone").innerHTML + "'s Turn!"
+
+                }
+                else {
+                    document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
+                }            
+                checkWin();
+
 
             }
             else {
-                document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
-            }            
-            checkWin();
-
-
+                alert("no cheating!");
+            }
         }
         else {
-            alert("no cheating!");
+            draw++
+            currentWin++
+            btn.innerHTML = playerTurn();
+            document.getElementById("draw").innerHTML = draw;
+            document.getElementById("playerTurnDisplay").innerHTML = "DRAW!"
         }
-        }
-
+    }
 };
 
 function btnReset() {

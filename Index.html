@@ -9,19 +9,30 @@
 
 
 
-        <p>Tic TAC TOE MEGADOME</p>
+        <h1>Tic TAC TOE MEGADOME</h1>
 
 
 <div>
+
+
+<div id="playerContainer">
+    <div id="playerOContainer">
+        <div id="playerONameZone" class="playerOClass">player O</div>
+        <div id="playerOWins" class="playerOClass">Wins: <div id="playerO" class="playerOClass">0</div></div>
+    </div>
+
+    <div id="playerXContainer">
+        <div id="playerXNameZone" class="playerXClass">player X</div>
+        <div id="playerXWins" class="playerXClass">Wins: <div id="playerX" class="playerXClass">0</div></div>
+    </div>
+
+
+</div>
+
+<div>Draws:</div>
+<div id="draw">0</div>
+
 <p class="announcementZone">Enter player name.</p>
-
-
-<p id="playerONameZone">player O</p>
-
-<div>Wins: <div id="playerO">0</div></div>
-<p id="playerXNameZone">player X</p>
-<div>Wins: <p id="playerX">0</p></div>
-
 <form onsubmit="return false">
     <label for="playerOName">Player O name:</label>
     <input type="text" id="playerOName" name="playerOName">
