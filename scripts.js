@@ -114,9 +114,11 @@ function onClickO() {
     var message = document.getElementById("playerOName").value;
     document.getElementById('playerONameZone').innerHTML ="Player " + message;
     document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
+    document.getElementById("playerOName").value = "";
 };
 
 function onClickX() {
     var message = document.getElementById("playerXName").value;
     document.getElementById("playerXNameZone").innerHTML= "Player " + message;
+    document.getElementById("playerOName").value = "";
 }

@@ -1,9 +1,27 @@
-table{border: solid 1px black;
-
+table{
+    border: solid 1px black;
+    table-layout:fixed;
+    width: 60%;
+    height: 60%;
 }
-tr {border: black solid 1px;}
+tr {border: black solid 1px;
+    height: 25%;
+   
+}
 
-th {border: black solid 1px;}
+td {
+    border: solid 1px black;
+    width: 33%;
+    
+    height: 33%;
+    background-color: red;
+    position: relative;
+}
+
+.cell{
+    width: 100%;
+    height: 100%;
+}
 
 h1{
 text-align: center;
