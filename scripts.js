@@ -43,7 +43,9 @@ function checkWin() {
             console.log("winner!");
             playerXWins ++;
             currentWin = 1;
-            return document.getElementById("playerX").innerHTML = playerXWins
+            document.getElementById("playerX").innerHTML = playerXWins
+            document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerXNameZone").innerHTML + " WON!"
+
             
             
             
@@ -52,8 +54,9 @@ function checkWin() {
             console.log("O WINNER");
             playerOWins ++;
             currentWin = 1;
+            document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + " WON!"
             document.getElementById("playerO").innerHTML = playerOWins;
-            document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s WON!"// THIS DOESNT WORK?
+            
             
 
         }
@@ -70,14 +73,15 @@ function pushBtn(btn){
         if (btn.innerHTML == "test "){
             btn.innerHTML = playerTurn();//placeholder for X'S and O'S
             turnCounter+=1;
-            checkWin();
             if (playerTurn() == "X"){ //player turndisplay update
                 document.getElementById("playerTurnDisplay").innerHTML= document.getElementById("playerXNameZone").innerHTML + "'s Turn!"
 
             }
             else {
                 document.getElementById("playerTurnDisplay").innerHTML = document.getElementById("playerONameZone").innerHTML + "'s Turn!"
-            }
+            }            
+            checkWin();
+
 
         }
         else {
