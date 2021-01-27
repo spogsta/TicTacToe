@@ -48,7 +48,7 @@
 </div>
 
 
-        <table style="width:100%">
+        <table>
         <tr id="row1">
             <td><button id ="1" class="cell" onclick="pushBtn(this)">test </button></td>
             <td><button id ="2" class="cell" onclick="pushBtn(this)">test </button></td>
@@ -67,8 +67,10 @@
             <td><button id ="9" class="cell" onclick="pushBtn(this)">test </button></td>
         </tr>
         </table>
-        <p id="playerTurnDisplay">Player O's Turn!</p>
-        <button onclick="btnReset()">RESET</button>
+        <div id="resetZone">
+            <p id="playerTurnDisplay">Player O's Turn!</p>
+            <button onclick="btnReset()">RESET</button>
+        </div>
         <script src="scripts.js"></script>
     </body>
 </html>
