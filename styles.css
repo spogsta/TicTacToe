@@ -40,7 +40,7 @@ text-align: center;
     float:center;
     width:100%;
     background-color: #85dcb8;
-    border: 1px solid red;
+    
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-box-shadow: 0 0 10px #bdbdbd;
@@ -52,21 +52,20 @@ text-align: center;
 
 #playerOContainer{
     width: 19%;
-    border: 1px solid black;
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
     align-content: right;
 }
 .playerOClass {
+    width: 100px;
     
-    border: 1px solid black;
     display: inline-block; 
 }
 
 #playerXContainer{
     width: 80%;
-    border: 1px solid black;
+    
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
@@ -75,7 +74,7 @@ text-align: center;
 
 .playerXClass{
     width: 100px;
-    border: 1px solid black;
+    
     display: inline-block; 
 }
 
